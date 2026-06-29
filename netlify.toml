@@ -1,0 +1,76 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+
+# ── API routes → Netlify Functions (must come before SPA fallback) ────────────
+[[redirects]]
+  from   = "/api/admin/create-user"
+  to     = "/.netlify/functions/admin-create-user"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/admin/users/*"
+  to     = "/.netlify/functions/admin-user"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/invite"
+  to     = "/.netlify/functions/invite"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/push/send"
+  to     = "/.netlify/functions/push-send"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/push/lesson-started"
+  to     = "/.netlify/functions/push-lesson-started"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/push/makeup-reviewed"
+  to     = "/.netlify/functions/push-makeup-reviewed"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/turn/credentials"
+  to     = "/.netlify/functions/turn-credentials"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/gdrive/auth"
+  to     = "/.netlify/functions/gdrive-auth"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/gdrive/token"
+  to     = "/.netlify/functions/gdrive-token"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/api/health"
+  to     = "/.netlify/functions/health"
+  status = 200
+  force  = true
+
+# ── SPA fallback — all routes return index.html ───────────────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

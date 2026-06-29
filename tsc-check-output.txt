@@ -1,0 +1,205 @@
+﻿node_modules/lucide-react/dist/lucide-react.d.ts(2,10): error TS2305: Module '"react"' has no exported member 'ReactSVG'.
+src/components/views/ReposicoesView.tsx(14,8): error TS1259: Module '"C:/Users/Emanu/OneDrive/\u00C1rea de Trabalho/sistema_iv/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+src/components/views/ReposicoesView.tsx(20,25): error TS6142: Module '../../contexts/AuthContext' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/contexts/AuthContext.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(21,26): error TS6142: Module '../../contexts/ToastContext' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/contexts/ToastContext.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(32,32): error TS6142: Module '../ui/MakeupSummaryModal' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/components/ui/MakeupSummaryModal.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(33,31): error TS6142: Module '../ui/MakeupStatusBadge' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/components/ui/MakeupStatusBadge.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(34,24): error TS6142: Module '../ui/EmptyState' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/components/ui/EmptyState.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(35,24): error TS6142: Module '../ui/PageLoader' was resolved to 'C:/Users/Emanu/OneDrive/├ürea de Trabalho/sistema_iv/src/components/ui/PageLoader.tsx', but '--jsx' is not set.
+src/components/views/ReposicoesView.tsx(152,24): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/components/views/ReposicoesView.tsx(153,24): error TS2802: Type 'Set<string>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.
+src/components/views/ReposicoesView.tsx(401,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(410,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(412,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(413,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(414,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(415,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(417,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(418,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(423,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(424,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(429,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(435,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(437,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(438,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(439,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(440,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(444,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(445,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(453,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(461,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(479,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(480,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(481,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(482,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(483,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(487,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(492,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(493,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(495,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(499,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(503,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(507,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(514,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(515,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(526,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(527,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(532,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(535,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(536,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(540,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(541,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(545,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(558,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(559,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(560,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(563,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(565,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(566,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(567,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(568,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(572,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(583,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(603,26): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(603,44): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(662,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(663,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(664,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(665,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(668,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(670,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(672,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(673,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(675,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(677,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(688,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(691,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(696,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(701,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(705,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(714,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(715,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(722,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(727,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(729,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(738,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(739,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(740,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(744,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(746,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(750,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(752,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(761,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(762,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(774,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(776,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(780,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(782,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(787,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(793,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(795,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(799,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(806,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(807,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(810,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(814,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(816,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(820,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(830,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(832,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(833,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(834,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(835,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(837,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(838,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(843,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(844,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(848,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(852,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(858,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(860,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(876,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(878,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(879,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(884,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(887,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(888,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(890,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(890,33): error TS2322: Type '{ key: string; a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }' is not assignable to type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+  Property 'key' does not exist on type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+src/components/views/ReposicoesView.tsx(897,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(898,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(900,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(900,33): error TS2322: Type '{ key: string; a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }' is not assignable to type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+  Property 'key' does not exist on type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+src/components/views/ReposicoesView.tsx(907,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(908,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(911,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(913,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(913,35): error TS2322: Type '{ key: string; a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }' is not assignable to type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+  Property 'key' does not exist on type '{ a: { id: string; student_id: string; scheduled_lesson_id: string; makeup_deadline: string; status: "absent" | "justified"; last_reminder_sent_at?: string; }; border: string; bg: string; }'.
+src/components/views/ReposicoesView.tsx(925,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(927,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(929,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(936,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(937,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(945,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(946,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(951,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(952,35): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(955,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(959,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(966,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(967,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(972,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(979,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(980,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(981,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(982,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(983,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(984,33): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(986,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(987,46): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(988,46): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(993,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(999,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1000,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1006,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1010,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1015,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1016,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1023,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1024,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1027,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1031,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1033,27): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/views/ReposicoesView.tsx(1037,29): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/lib/supabase.ts(4,21): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+src/lib/supabase.ts(4,33): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/lib/supabase.ts(5,25): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+src/lib/supabase.ts(5,37): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/services/attendance.service.ts(350,13): error TS18047: 'thisLesson' is possibly 'null'.
+src/services/attendance.service.ts(350,49): error TS2339: Property 'scheduled_at' does not exist on type 'never'.
+src/services/attendance.service.ts(354,40): error TS2339: Property 'class_id' does not exist on type 'never'.
+src/services/attendance.service.ts(355,44): error TS2339: Property 'scheduled_at' does not exist on type 'never'.
+src/services/attendance.service.ts(361,15): error TS18047: 'nextLesson' is possibly 'null'.
+src/services/attendance.service.ts(362,46): error TS2339: Property 'scheduled_at' does not exist on type 'never'.
+src/services/auth.service.ts(22,5): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+src/services/auth.service.ts(22,17): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/services/makeup.service.ts(153,11): error TS2339: Property 'scheduled_lesson_id' does not exist on type 'never'.
+src/services/makeup.service.ts(153,38): error TS2339: Property 'student_id' does not exist on type 'never'.
+src/services/makeup.service.ts(157,38): error TS2339: Property 'scheduled_lesson_id' does not exist on type 'never'.
+src/services/makeup.service.ts(158,29): error TS2339: Property 'student_id' does not exist on type 'never'.
+src/services/makeup.service.ts(162,7): error TS18047: 'att' is possibly 'null'.
+src/services/makeup.service.ts(163,10): error TS18047: 'att' is possibly 'null'.
+src/services/makeup.service.ts(164,19): error TS18047: 'att' is possibly 'null'.
+src/services/makeup.service.ts(179,13): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+src/services/makeup.service.ts(205,13): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+src/services/recording.service.ts(28,29): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+src/services/recording.service.ts(28,41): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/services/recording.service.ts(396,6): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(values: never, options?: { count?: "exact" | "planned" | "estimated"; }): PostgrestFilterBuilder<{ PostgrestVersion: "12"; }, never, never, null, "recordings", never, "POST">', gave the following error.
+    Argument of type '{ scheduled_lesson_id: string; class_id: string; recorded_by: string; gdrive_file_id: string; gdrive_view_link: string; gdrive_folder_id: string; title: string; duration_s: number; size_bytes: number; mime_type: string; status: "error" | ... 2 more ... | "ready"; source: "platform" | "external"; error_message: strin...' is not assignable to parameter of type 'never'.
+  Overload 2 of 2, '(values: never[], options?: { count?: "exact" | "planned" | "estimated"; defaultToNull?: boolean; }): PostgrestFilterBuilder<{ PostgrestVersion: "12"; }, never, never, null, "recordings", never, "POST">', gave the following error.
+    Object literal may only specify known properties, and 'scheduled_lesson_id' does not exist in type 'never[]'.
+src/services/recording.service.ts(432,13): error TS2345: Argument of type '{ error_message: string; status: "error" | "recording" | "uploading" | "ready"; size_bytes: number; duration_s: number; title: string; gdrive_view_link: string; gdrive_file_id: string; }' is not assignable to parameter of type 'never'.

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-hw-bg: #151619;
+  --color-hw-card: #1c1e22;
+  --color-hw-accent: #00ff00;
+  --color-hw-text: #ffffff;
+  --color-hw-muted: #8e9299;
+}
+
+@layer base {
+  body {
+    @apply bg-hw-bg text-hw-text font-sans antialiased;
+  }
+}
+
+.glass-panel {
+  @apply bg-hw-card/80 backdrop-blur-xl border border-white/10 rounded-2xl;
+}
+
+.led-glow {
+  box-shadow: 0 0 10px var(--color-hw-accent);
+}
+
+.markdown-content h1 { @apply text-2xl font-bold mb-4 text-hw-accent; }
+.markdown-content h2 { @apply text-xl font-bold mb-3 text-hw-accent/80; }
+.markdown-content h3 { @apply text-lg font-bold mb-2; }
+.markdown-content p { @apply mb-4 last:mb-0; }
+.markdown-content ul { @apply list-disc pl-5 mb-4; }
+.markdown-content ol { @apply list-decimal pl-5 mb-4; }
+.markdown-content li { @apply mb-1; }
+.markdown-content strong { @apply text-hw-accent font-bold; }
+.markdown-content code { @apply bg-black/30 px-1 rounded font-mono text-xs; }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

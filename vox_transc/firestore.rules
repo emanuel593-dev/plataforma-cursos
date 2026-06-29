@@ -1,0 +1,251 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {userId}
+    // Fields:
+    //   - uid: string (required, immutable) - The user's unique ID
+    //   - email: string (required, immutable) - The user's email address
+    //   - displayName: string (optional) - The user's display name
+    //   - photoURL: string (optional) - The user's photo URL
+    //   - orgId: string (optional) - The ID of the organization the user belongs to
+    //   - role: string (optional, enum: ['owner', 'admin', 'member']) - The user's role
+    //   - createdAt: timestamp (required, immutable) - When the user was created
+    //
+    // Collection: organizations
+    // Document ID: {orgId}
+    // Fields:
+    //   - id: string (required, immutable) - The organization ID
+    //   - name: string (required) - The organization name
+    //   - ownerId: string (required, immutable) - The UID of the organization owner
+    //   - plan: string (required, enum: ['free', 'pro', 'enterprise']) - The subscription plan
+    //   - webhookUrl: string (optional) - The URL for webhooks
+    //   - webhookSecret: string (optional) - The secret for webhooks
+    //   - createdAt: timestamp (required, immutable) - When the organization was created
+    //
+    // Collection: apiKeys (subcollection of organizations)
+    // Document ID: {keyId}
+    // Fields:
+    //   - id: string (required, immutable) - The API key ID
+    //   - orgId: string (required, immutable) - The organization this key belongs to
+    //   - name: string (required) - A friendly name for the key
+    //   - rawKey: string (required, immutable) - The raw API key
+    //   - createdAt: timestamp (required, immutable) - When the key was created
+    //   - lastUsedAt: timestamp (optional) - When the key was last used
+    //
+    // Collection: sessions
+    // Document ID: {sessionId}
+    // Fields:
+    //   - id: string (required, immutable) - The session ID
+    //   - userId: string (required, immutable) - The ID of the user who owns this session
+    //   - orgId: string (optional) - The ID of the organization this session belongs to
+    //   - timestamp: timestamp (required, immutable) - When the session occurred
+    //   - mode: string (required, enum: ['local', 'meeting']) - The type of session
+    //   - transcriptions: list (optional) - List of transcriptions
+    //   - summary: string (optional) - The AI generated summary
+    //   - duration: number (required) - Duration of the session in seconds
+    //   - externalId: string (optional) - Reference ID from an external system
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.userId;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isSuperAdmin() {
+      return isAuthenticated() && request.auth.token.email == "emanuel.victor593@gmail.com" && request.auth.token.email_verified == true;
+    }
+
+    function isOrgMember(orgId) {
+      return isSuperAdmin() || (
+        isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.orgId == orgId
+      );
+    }
+
+    function isOrgAdmin(orgId) {
+      return isSuperAdmin() || (
+        isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.orgId == orgId && 
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' || 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'owner')
+      );
+    }
+
+    function isOrgOwner(orgId) {
+      return isSuperAdmin() || (
+        isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.orgId == orgId && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'owner'
+      );
+    }
+
+    function uidUnchanged() {
+      return !('uid' in request.resource.data) || request.resource.data.uid == request.auth.uid;
+    }
+
+    function uidNotModified() {
+      return !('uid' in request.resource.data) || request.resource.data.uid == resource.data.uid;
+    }
+
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function isValidUrl(url) {
+      return url is string && (url.matches("^https://.*") || url.matches("^http://.*"));
+    }
+
+    function isRecent(time) {
+      return time is timestamp && time > request.time - duration.value(5, 'm') && time < request.time + duration.value(5, 'm');
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidOptionalString(field, minLen, maxLen) {
+      return !(field in request.resource.data) ||
+             (request.resource.data[field] is string &&
+              request.resource.data[field].size() >= minLen &&
+              request.resource.data[field].size() <= maxLen);
+    }
+
+    function areImmutableFieldsUnchanged(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    function isValidUser(data) {
+      return hasOnlyAllowedFields(['uid', 'email', 'displayName', 'photoURL', 'orgId', 'role', 'createdAt']) &&
+             data.uid is string && data.uid.size() > 0 && data.uid.size() < 128 &&
+             data.email is string && isValidEmail(data.email) &&
+             data.createdAt is timestamp &&
+             isValidOptionalString('displayName', 0, 100) &&
+             isValidOptionalString('photoURL', 0, 2048) &&
+             isValidOptionalString('orgId', 0, 128) &&
+             (!( 'role' in data ) || data.role in ['owner', 'admin', 'member']);
+    }
+
+    function isValidOrganization(data) {
+      return hasOnlyAllowedFields(['id', 'name', 'ownerId', 'plan', 'createdAt', 'webhookUrl', 'webhookSecret']) &&
+             data.id is string && data.id.size() > 0 && data.id.size() < 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.ownerId is string && data.ownerId.size() > 0 && data.ownerId.size() < 128 &&
+             data.plan in ['free', 'pro', 'enterprise'] &&
+             data.createdAt is timestamp &&
+             isValidOptionalString('webhookUrl', 0, 2048) &&
+             isValidOptionalString('webhookSecret', 0, 128) &&
+             (!( 'webhookUrl' in data ) || isValidUrl(data.webhookUrl));
+    }
+
+    function isValidApiKey(data) {
+      return hasOnlyAllowedFields(['id', 'orgId', 'name', 'keyPrefix', 'hashedKey', 'createdAt', 'lastUsedAt']) &&
+             data.id is string && data.id.size() > 0 && data.id.size() < 128 &&
+             data.orgId is string && data.orgId.size() > 0 && data.orgId.size() < 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.keyPrefix is string && data.keyPrefix.size() > 0 && data.keyPrefix.size() < 128 &&
+             data.hashedKey is string && data.hashedKey.size() > 0 && data.hashedKey.size() < 256 &&
+             data.createdAt is timestamp &&
+             (!( 'lastUsedAt' in data ) || data.lastUsedAt is timestamp);
+    }
+
+    function isValidSession(data) {
+      return hasOnlyAllowedFields(['id', 'userId', 'orgId', 'timestamp', 'mode', 'transcriptions', 'summary', 'duration', 'externalId']) &&
+             data.id is string && data.id.size() > 0 && data.id.size() < 128 &&
+             data.userId is string && data.userId.size() > 0 && data.userId.size() < 128 &&
+             data.timestamp is timestamp &&
+             data.mode in ['local', 'meeting'] &&
+             data.duration is number && data.duration >= 0 &&
+             isValidOptionalString('orgId', 0, 128) &&
+             isValidOptionalString('externalId', 0, 128) &&
+             (!( 'transcriptions' in data ) || (data.transcriptions is list && data.transcriptions.size() <= 10000)) &&
+             isValidOptionalString('summary', 0, 100000);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /organizations/{orgId} {
+      allow read: if isOrgMember(orgId);
+      allow create: if isAuthenticated() && 
+                       request.resource.data.ownerId == request.auth.uid &&
+                       isValidOrganization(request.resource.data);
+      allow update: if isOrgAdmin(orgId) &&
+                       isValidOrganization(request.resource.data) &&
+                       areImmutableFieldsUnchanged(['id', 'ownerId', 'createdAt']);
+      allow delete: if isOrgOwner(orgId);
+
+      match /apiKeys/{keyId} {
+        allow read: if isOrgAdmin(orgId);
+        allow create: if isOrgAdmin(orgId) &&
+                         request.resource.data.orgId == orgId &&
+                         isValidApiKey(request.resource.data);
+        allow update: if isOrgAdmin(orgId) &&
+                         isValidApiKey(request.resource.data) &&
+                         areImmutableFieldsUnchanged(['id', 'orgId', 'keyPrefix', 'hashedKey', 'createdAt']);
+        allow delete: if isOrgAdmin(orgId);
+      }
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || (isAuthenticated() && getUserData().orgId == resource.data.orgId);
+      allow create: if isOwner(userId) &&
+                       hasRequiredFields(['uid', 'email', 'createdAt']) &&
+                       isValidUser(request.resource.data) &&
+                       uidUnchanged();
+      allow update: if isOwner(userId) &&
+                       isValidUser(request.resource.data) &&
+                       uidNotModified() &&
+                       areImmutableFieldsUnchanged(['createdAt', 'email']) &&
+                       // Only admins can change roles or orgId, or super admin bootstrapping
+                       (request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'orgId']) ? 
+                         (isSuperAdmin() || isOrgAdmin(resource.data.orgId)) : true);
+      allow delete: if isOwner(userId);
+    }
+
+    match /sessions/{sessionId} {
+      allow read: if isDocOwner() || (resource.data.orgId != null && isOrgMember(resource.data.orgId));
+      allow create: if isAuthenticated() &&
+                       request.resource.data.userId == request.auth.uid &&
+                       (request.resource.data.orgId != null ? isOrgMember(request.resource.data.orgId) : true) &&
+                       hasRequiredFields(['id', 'userId', 'timestamp', 'mode', 'duration']) &&
+                       isValidSession(request.resource.data);
+      allow update: if (isDocOwner() || (resource.data.orgId != null && isOrgAdmin(resource.data.orgId))) &&
+                       isValidSession(request.resource.data) &&
+                       areImmutableFieldsUnchanged(['id', 'userId', 'timestamp', 'mode']);
+      allow delete: if isDocOwner() || (resource.data.orgId != null && isOrgAdmin(resource.data.orgId));
+    }
+  }
+}

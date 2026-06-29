@@ -1,0 +1,10 @@
+{
+  "name": "VoxTranscribe Pro",
+  "description": "Real-time voice and video transcription powered by Gemini Live API. Supports live audio and video frame analysis.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture",
+    "geolocation"
+  ]
+}

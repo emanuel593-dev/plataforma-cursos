@@ -1,0 +1,52 @@
+{
+  "name": "iv-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "server": "tsx server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.4",
+    "@tanstack/react-query": "^5.101.1",
+    "@vitejs/plugin-react": "^4.4.1",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "localforage": "^1.10.0",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.6.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.1",
+    "tailwind-merge": "^3.0.2",
+    "vite": "^6.2.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.8.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/web-push": "^3.6.4",
+    "@vitest/coverage-v8": "^4.1.5",
+    "jsdom": "^29.1.1",
+    "supabase": "^2.91.1",
+    "tsx": "^4.19.0",
+    "typescript": "~5.7.0",
+    "vite-plugin-pwa": "^1.2.0",
+    "vitest": "^4.1.5"
+  }
+}

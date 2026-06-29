@@ -1,0 +1,187 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The user's unique ID"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "The user's photo URL"
+        },
+        "orgId": {
+          "type": "string",
+          "description": "The ID of the organization the user belongs to"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["owner", "admin", "member"],
+          "description": "The user's role within the organization"
+        },
+        "createdAt": {
+          "type": "timestamp",
+          "description": "When the user was created"
+        }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "Organization": {
+      "title": "Organization",
+      "description": "Company or Workspace data",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The organization ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "The organization name"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "The UID of the organization owner"
+        },
+        "plan": {
+          "type": "string",
+          "enum": ["free", "pro", "enterprise"],
+          "description": "The subscription plan"
+        },
+        "webhookUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL to send active webhooks to"
+        },
+        "webhookSecret": {
+          "type": "string",
+          "description": "Secret key to sign webhook payloads"
+        },
+        "createdAt": {
+          "type": "timestamp",
+          "description": "When the organization was created"
+        }
+      },
+      "required": ["id", "name", "ownerId", "plan", "createdAt"]
+    },
+    "ApiKey": {
+      "title": "ApiKey",
+      "description": "API credentials for external integrations (like ATS)",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The API key ID"
+        },
+        "orgId": {
+          "type": "string",
+          "description": "The organization this key belongs to"
+        },
+        "name": {
+          "type": "string",
+          "description": "A friendly name for the key (e.g., 'ATS Integration')"
+        },
+        "keyPrefix": {
+          "type": "string",
+          "description": "The prefix of the API key for display purposes"
+        },
+        "hashedKey": {
+          "type": "string",
+          "description": "The hashed API key for validation"
+        },
+        "createdAt": {
+          "type": "timestamp",
+          "description": "When the key was created"
+        },
+        "lastUsedAt": {
+          "type": "timestamp",
+          "description": "When the key was last used"
+        }
+      },
+      "required": ["id", "orgId", "name", "keyPrefix", "hashedKey", "createdAt"]
+    },
+    "HistorySession": {
+      "title": "HistorySession",
+      "description": "A recording or meeting session",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The session ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The ID of the user who owns this session"
+        },
+        "orgId": {
+          "type": "string",
+          "description": "The ID of the organization this session belongs to (optional)"
+        },
+        "timestamp": {
+          "type": "timestamp",
+          "description": "When the session occurred"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["recording", "meeting"],
+          "description": "The type of session"
+        },
+        "transcriptions": {
+          "type": "array",
+          "description": "List of transcriptions in JSON string format or array of objects"
+        },
+        "summary": {
+          "type": "string",
+          "description": "The AI generated summary"
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration of the session in seconds"
+        },
+        "externalId": {
+          "type": "string",
+          "description": "Reference ID from an external system like an ATS"
+        }
+      },
+      "required": ["id", "userId", "timestamp", "mode", "duration"]
+    }
+  },
+  "firestore": {
+    "/organizations/{orgId}": {
+      "schema": {
+        "$ref": "#/entities/Organization"
+      },
+      "description": "Stores organization data"
+    },
+    "/organizations/{orgId}/apiKeys/{keyId}": {
+      "schema": {
+        "$ref": "#/entities/ApiKey"
+      },
+      "description": "Stores API keys for an organization"
+    },
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "Stores user profiles"
+    },
+    "/sessions/{sessionId}": {
+      "schema": {
+        "$ref": "#/entities/HistorySession"
+      },
+      "description": "Stores all recorded sessions and meetings"
+    }
+  }
+}

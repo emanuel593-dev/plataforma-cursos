@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="80" fill="#0f1117"/>
+  <rect x="8" y="8" width="496" height="496" rx="72" stroke="#6366f1" stroke-width="3" opacity="0.3"/>
+  <text x="256" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="192" fill="#6366f1">IV</text>
+  <text x="256" y="390" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="48" fill="#8e9299">Instituto</text>
+</svg>
