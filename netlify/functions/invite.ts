@@ -60,12 +60,12 @@ export const handler = async (event: {
   }
 
   const emailBody = {
-    from: 'LMS Education Platform <plataforma@talentsflow.com.br>',
+    from: 'LMS Platform <notifications@your-domain.com>',
     to: recipientEmail,
-    subject: 'Suas credenciais de acesso — LMS Education Platform',
+    subject: 'Suas credenciais de acesso — LMS Platform',
     html: `
       <div style="font-family:sans-serif;max-width:500px;margin:0 auto;padding:24px">
-        <h2 style="color:#6366f1">LMS Education Platform</h2>
+        <h2 style="color:#6366f1">LMS Platform</h2>
         <p>Olá, <strong>${recipientName}</strong>!</p>
         <p>Suas credenciais de acesso ao sistema foram criadas:</p>
         <table style="border-collapse:collapse;width:100%">
@@ -73,7 +73,7 @@ export const handler = async (event: {
           <tr><td style="padding:8px;font-weight:bold">Senha temporária:</td><td style="padding:8px;font-family:monospace">${password}</td></tr>
         </table>
         <p style="color:#ef4444;font-size:13px">⚠ Você será solicitado a alterar sua senha no primeiro acesso.</p>
-        <p><a href="https://demo-lms.netlify.app" style="background:#6366f1;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none">Acessar sistema</a></p>
+        <p><a href="https://your-deployment.example.com" style="background:#6366f1;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none">Acessar sistema</a></p>
       </div>
     `,
   };

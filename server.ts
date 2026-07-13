@@ -27,6 +27,7 @@ function auditLog(action: string, by: string, details: Record<string, unknown>) 
   console.log(JSON.stringify(entry));
 
   if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
+    // Log actions to audit table (requires valid Supabase credentials)
     fetch(`${SUPABASE_URL}/rest/v1/audit_logs`, {
       method: 'POST',
       headers: {
@@ -219,12 +220,12 @@ app.post('/api/invite', async (req, res) => {
 
   try {
     const body = {
-      from: 'LMS Education Platform <plataforma@talentsflow.com.br>',
+      from: 'LMS Platform <notifications@your-domain.com>',
       to: recipientEmail,
-      subject: 'Suas credenciais de acesso — LMS Education Platform',
+      subject: 'Suas credenciais de acesso — LMS Platform',
       html: `
         <div style="font-family:sans-serif;max-width:500px;margin:0 auto;padding:24px">
-          <h2 style="color:#6366f1">LMS Education Platform</h2>
+          <h2 style="color:#6366f1">LMS Platform</h2>
           <p>Olá, <strong>${recipientName}</strong>!</p>
           <p>Suas credenciais de acesso ao sistema foram criadas:</p>
           <table style="border-collapse:collapse;width:100%">

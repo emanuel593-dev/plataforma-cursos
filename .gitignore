@@ -29,9 +29,8 @@ Thumbs.db
 # Vite cache
 .vite/
 
-# Duplicate project folder (source of truth is root)
-iv_platform/
+# Internal documentation (not for portfolio)
+_internal_docs/
 
 # Local Netlify folder
 .netlify
-deno.lock

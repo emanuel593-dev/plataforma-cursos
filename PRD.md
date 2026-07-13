@@ -1,18 +1,18 @@
-# PRD — Plataforma IV (LMS Education Platform)
+# PRD — LMS Education Platform
 
 **Versão**: 1.0
 **Data**: 2026-04-13
-**Status**: Aprovado para implementação
+**Status**: Produção
 
 ---
 
 ## 1. Visão Geral
 
 ### 1.1 Produto
-Plataforma web de ensino online para o LMS Education Platform (IV) da Client Organization (ORG). Sistema de gestão acadêmica com salas de aula virtuais por videoconferência, controle de presenças, calendário de aulas e gestão de turmas/alunos.
+Plataforma web de ensino online (LMS) com salas de aula virtuais integradas por WebRTC, controle de presenças automatizado, gestão de turmas e relatórios de acompanhamento.
 
 ### 1.2 Contexto
-O IV é uma escola de capacitação de futuros líderes de células da ORG, com foco em estudo bíblico, desenvolvimento de caráter cristão e liderança. Atualmente possui ~20 alunos com aulas presenciais e online. A plataforma visa formalizar e organizar as aulas online com tracking completo.
+Sistema de gestão acadêmica para instituições de ensino que necessitam de videoconferência nativa integrada, rastreamento automático de presença, hierarquia de papéis com isolamento de dados (RBAC + RLS) e escalabilidade.
 
 ### 1.3 Objetivos
 - Disponibilizar aulas online via videoconferência integrada

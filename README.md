@@ -17,5 +17,8 @@ Uma plataforma completa de ensino a distância (LMS) focada na gestão acadêmic
 - **Auditorias e Tech Debt:** Este projeto acompanha uma extensa gama de documentações de desenvolvimento (`PRD.md`, `AUDITORIA*.md`) que refletem um ciclo de vida profissional de software, focando em melhorias contínuas, identificação de débitos técnicos e otimização de performance no React.
 
 ---
-> **Nota para Recrutadores:** Este repositório é uma **Vitrine / Case Study** originada de um sistema corporativo real. Por razões de confidencialidade (NDA), nomes de clientes, chaves de API e históricos antigos de Git foram higienizados/removidos. 
-> 💡 *Sugestão:* Se você quer avaliar minha capacidade como Engenheiro de Software Full-Stack, navegue pela pasta `supabase/migrations` para conferir a lógica de negócio implementada em SQL, e analise a gestão de estado complexa e sinalização dentro de `src/components/views`.
+> **Para Recrutadores:** Este é um projeto **Full-Stack** de uma plataforma educacional real com foco em WebRTC e gestão de presença automatizada. Confira o seguinte para entender meu trabalho:
+> - **Arquitetura**: [supabase/migrations](supabase/migrations) — lógica de negócio complexa em SQL com RLS
+> - **Frontend**: [src/components/views](src/components/views) — gestão de estado avançada, WebRTC mesh, real-time sync
+> - **Backend**: [netlify/functions](netlify/functions) — funções serverless com autenticação e integração de terceiros
+> - **Documentação técnica**: [docs/](docs/) — decisões de arquitetura e padrões de design
